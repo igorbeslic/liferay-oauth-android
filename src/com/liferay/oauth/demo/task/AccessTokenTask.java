@@ -14,15 +14,12 @@ import org.scribe.oauth.OAuthService;
 public class AccessTokenTask extends AsyncTask<OAuthService, Void, String> {
 
 	public AccessTokenTask(OAuthData oAuthData, Activity parentActivity) {
-
 		_oAuthData = oAuthData;
-
 		_parentActivity = parentActivity;
 	}
 
 	@Override
 	protected String doInBackground(OAuthService... params) {
-
 		Verifier verifier = new Verifier(_oAuthData.oauthVerifier);
 
 		_oAuthData.accessToken = params[0].getAccessToken(
@@ -44,6 +41,6 @@ public class AccessTokenTask extends AsyncTask<OAuthService, Void, String> {
 	}
 
 	private OAuthData _oAuthData;
-
 	private Activity _parentActivity;
+
 }

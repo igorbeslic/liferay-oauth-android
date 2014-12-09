@@ -15,7 +15,6 @@ public class RequestTokenTask extends AsyncTask<OAuthService, Void, String> {
 
 	public RequestTokenTask(OAuthData oAuthData, Activity parentActivity) {
 		_oAuthData = oAuthData;
-
 		_parentActivity = parentActivity;
 	}
 
@@ -38,6 +37,6 @@ public class RequestTokenTask extends AsyncTask<OAuthService, Void, String> {
 	}
 
 	private OAuthData _oAuthData;
-
 	private Activity _parentActivity;
+
 }

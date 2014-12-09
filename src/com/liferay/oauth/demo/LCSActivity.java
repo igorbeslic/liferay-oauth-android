@@ -42,7 +42,6 @@ public class LCSActivity extends Activity {
 		}
 
 		getOAuthData().oauthToken = uri.getQueryParameter("oauth_token");
-
 		getOAuthData().oauthVerifier = uri.getQueryParameter("oauth_verifier");
 
 		if (getOAuthData().accessTokenString != null) {
@@ -53,8 +52,8 @@ public class LCSActivity extends Activity {
 	private void inflateOAuthData() {
 		if (getOAuthData().accessTokenString != null) {
 
-			TextView textViewHelper = (TextView)findViewById(
-				R.id.oauthTokenBox);
+			TextView textViewHelper =
+				(TextView)findViewById(R.id.oauthTokenBox);
 
 			if (getOAuthData().oauthToken != null) {
 				textViewHelper.setText(getOAuthData().oauthToken);
@@ -64,29 +63,17 @@ public class LCSActivity extends Activity {
 
 			textViewHelper.setText(getOAuthData().oauthVerifier);
 
-			Button portalDataButton = (Button)findViewById(
-				R.id.portalDataButton);
+			Button portalDataButton =
+				(Button)findViewById(R.id.portalDataButton);
 
 			portalDataButton.setOnClickListener(
 				new View.OnClickListener() {
 					@Override
 					public void onClick(View v) {
 						String command =
-						/*"http://192.168.1.100:8080/api/jsonws/" +
-								"dlapp/get-folders/repositoryId/10180" +
-								"/parentFolderId/0";*/
-
-						/*"http://192.168.0.13:8080/api/jsonws/" +
-							"dlapp/get-folders/repositoryId/10180" +
-							"/parentFolderId/0";*/
-
 						"http://10.0.2.2:8080/api/jsonws/" +
 							"dlapp/get-folders/repositoryId/10180" +
 							"/parentFolderId/0";
-
-							/*"http://192.168.1.102:8080/api/jsonws/" +
-								"dlapp/get-folders/repositoryId/10180" +
-								"/parentFolderId/0";*/
 
 						new AccessDLTask(
 							getOAuthData(), getOAuthService(),
@@ -115,8 +102,6 @@ public class LCSActivity extends Activity {
 			PREFERENCES_NAME, 0);
 
 		final SharedPreferences.Editor editor =  preferences.edit();
-
-		OAuthData oAuthData = getOAuthData();
 
 		editor.remove("access_token");
 		editor.remove("access_token_secret");
@@ -151,7 +136,8 @@ public class LCSActivity extends Activity {
 
 		if (oAuthData.valid()) {
 			editor.putString("access_token", oAuthData.accessTokenString);
-			editor.putString("access_token_secret", oAuthData.accessTokenSecret);
+			editor.putString(
+				"access_token_secret", oAuthData.accessTokenSecret);
 
 			editor.commit();
 
@@ -170,9 +156,7 @@ public class LCSActivity extends Activity {
 
 		if (getOAuthData().valid()) {
 			requestTokenButton.setEnabled(false);
-			// requestTokenButton.setClickable(false);
 			authorizeTokenButton.setEnabled(false);
-			// authorizeTokenButton.setClickable(false);
 		}
 		else {
 			requestTokenButton.setEnabled(true);

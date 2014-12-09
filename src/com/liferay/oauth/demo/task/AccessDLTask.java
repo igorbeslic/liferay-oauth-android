@@ -26,13 +26,11 @@ import java.util.Date;
 public class AccessDLTask extends AsyncTask<String, Void, String> {
 
 	public AccessDLTask(
-			OAuthData oAuthData, OAuthService oAuthService,
-			Activity parentActivity) {
+		OAuthData oAuthData, OAuthService oAuthService,
+		Activity parentActivity) {
 
 		_oAuthData = oAuthData;
-
 		_oAuthService = oAuthService;
-
 		_parentActivity = parentActivity;
 	}
 
@@ -104,8 +102,7 @@ public class AccessDLTask extends AsyncTask<String, Void, String> {
 	}
 
 	private OAuthData _oAuthData;
-
 	private OAuthService _oAuthService;
-
 	private Activity _parentActivity;
+
 }

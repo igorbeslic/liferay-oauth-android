@@ -30,4 +30,5 @@ public class OAuthData {
 	public boolean valid() {
 		return (accessTokenString != null) && (accessTokenSecret != null);
 	}
+
 }

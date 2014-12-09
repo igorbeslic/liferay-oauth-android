@@ -6,7 +6,7 @@ import org.scribe.builder.api.DefaultApi10a;
  * @author Igor Beslic
  */
 public class DemoAPI extends DefaultApi10a {
-	public static final String AUTHORIZE_HOST = /*"192.168.1.102""192.168.0.13""192.168.1.100"*/"10.0.2.2";
+	public static final String AUTHORIZE_HOST = "10.0.2.2";
 
 	public static final String AUTHORIZE_PORT = "8080";
 
